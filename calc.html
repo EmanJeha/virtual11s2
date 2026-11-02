@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Calculator Lab · Grade 11 Session 2</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Nunito:wght@500;700;800&family=JetBrains+Mono:wght@500;700&display=swap">
+<link rel="stylesheet" href="style.css">
+<style>
+  .lab { max-width: 1180px; margin: 0 auto; padding: 16px 16px 30px; display: grid; gap: 16px; position: relative; z-index: 2; }
+  .lab h1 { font-size: clamp(34px, 4.4vw, 56px); }
+  .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 10px; }
+  .steps div { background: #fff; border-radius: 16px; padding: 12px 14px; box-shadow: 0 5px 0 var(--line); font: 700 16px/1.35 var(--f-body); }
+  .steps b { display: block; font: 800 20px/1.1 var(--f-display); color: var(--pink); }
+</style>
+</head>
+<body>
+<div class="floaters" id="floaters" aria-hidden="true"></div>
+<canvas id="fx" aria-hidden="true"></canvas>
+<div class="lab">
+  <h1 class="title wave"><span class="c1">C</span><span class="c2">a</span><span class="c3">l</span><span class="c4">c</span><span class="c5">u</span><span class="c1">l</span><span class="c2">a</span><span class="c3">t</span><span class="c4">o</span><span class="c5">r</span> <span class="c1">L</span><span class="c2">a</span><span class="c3">b</span></h1>
+  <div class="steps">
+    <div><b>1 · Design</b>Pick 4 contrasting button colours with white labels.</div>
+    <div><b>2 · Check</b>View it as someone with colour vision deficiency.</div>
+    <div><b>3 · Use it</b>Try +, −, ×, ÷, √, sin, cos, tan and History.</div>
+    <div><b>4 · Test</b>Run the 4 edge cases. Which one surprises you?</div>
+  </div>
+  <div id="calc"></div>
+</div>
+<script src="fx.js"></script>
+<script src="calc.js"></script>
+<script>floaters(['+', '−', '×', '÷', '=', '√', '%', '0.1']); mountCalc(document.getElementById('calc'));</script>
+</body>
+</html>
